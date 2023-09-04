@@ -208,8 +208,8 @@ class _DetailPageState extends State<DetailPage> {
                   left: 20,
                   right: 20,
                   child: ShowUpAnimation(
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         AppButtons(
                           color: AppColors.textColor1,
                           backgroundColor: Colors.white,

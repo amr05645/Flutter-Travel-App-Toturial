@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 3, vsync: this);
+    TabController tabController = TabController(length: 3, vsync: this);
 
     return Scaffold(
       body: SafeArea(
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             const EdgeInsets.only(left: 20.0, right: 20.0),
                         labelColor: Colors.black,
                         unselectedLabelColor: Colors.grey,
-                        controller: _tabController,
+                        controller: tabController,
                         isScrollable: true,
                         indicatorSize: TabBarIndicatorSize.label,
                         indicator: const CircleTabIndicator(
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     height: 310,
                     width: double.maxFinite,
                     child: TabBarView(
-                      controller: _tabController,
+                      controller: tabController,
                       children: [
                         ListView.builder(
                           itemCount: info.length,
@@ -177,10 +177,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Container(
                     margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: ShowUpAnimation(
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           AppTextLarge(text: 'Explore more', size: 22.0),
                           AppText(text: 'See all', color: AppColors.textColor1),
                         ],
@@ -256,13 +256,13 @@ class CirclePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    Paint _paint = Paint();
-    _paint.color = color;
-    _paint.isAntiAlias = true;
+    Paint paint = Paint();
+    paint.color = color;
+    paint.isAntiAlias = true;
 
     Offset circleOffset = Offset(
         configuration.size!.width / 2, configuration.size!.height - radius);
 
-    canvas.drawCircle(offset + circleOffset, radius, _paint);
+    canvas.drawCircle(offset + circleOffset, radius, paint);
   }
 }

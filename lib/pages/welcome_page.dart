@@ -73,8 +73,8 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: SizedBox(
                           width: 200,
                           child: ShowUpAnimation(
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 ResponsiveButton(width: 120.0),
                               ],
                             ),
